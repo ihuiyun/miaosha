@@ -1,6 +1,8 @@
 package com.zld.mall.controller;
 
 import com.zld.mall.domain.User;
+import com.zld.mall.redis.RedisService;
+import com.zld.mall.redis.key.UserKey;
 import com.zld.mall.result.CodeMsg;
 import com.zld.mall.result.Result;
 import com.zld.mall.service.UserService;
@@ -23,6 +25,9 @@ public class SampleController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    RedisService redisService;
+
     @RequestMapping("/test")
     public String test(Model model){
         model.addAttribute("msg","success");
@@ -36,4 +41,17 @@ public class SampleController {
         return user == null? Result.error(CodeMsg.SERVER_ERROR):Result.success(user);
     }
 
+    @RequestMapping("/redis/test/set")
+    @ResponseBody
+    public Result redisTestSet(){
+        boolean re = redisService.set(UserKey.getById,"k1","1111");
+        return re?Result.success(CodeMsg.SUCCESS):Result.error(CodeMsg.SERVER_ERROR);
+    }
+
+    @RequestMapping("/redis/test/get")
+    @ResponseBody
+    public Result<String> redisTestGet(){
+        String re = redisService.get(UserKey.getById,"k1",String.class);
+        return re != null?Result.success(re):Result.error(CodeMsg.SERVER_ERROR);
+    }
 }
