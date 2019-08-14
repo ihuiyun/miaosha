@@ -80,6 +80,11 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.8</version>
     </dependency>
-  </dependencies>
 
+    <!-- 参数校验依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+  </dependencies>
 </project>

@@ -1,5 +1,10 @@
 package com.zld.mall.vo;
 
+import com.zld.mall.volidator.IsMobile;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotNull;
+
 /**
  * 描述：
  *
@@ -8,7 +13,12 @@ package com.zld.mall.vo;
  */
 public class LoginVo {
 
+    @NotNull
+    @IsMobile
     private String mobile;
+
+    @NotNull
+    @Length(min = 6 , max = 32)
     private String password;
 
     public String getMobile() {
