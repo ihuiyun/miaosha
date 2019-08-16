@@ -24,5 +24,9 @@ teacher: joshua
 完善分布式的session，将LoginController的参数处理代码提取优化
 将GoodsController中的对cookie的处理放到一个另外的处理类
 
-2019/8/16
+2019/8/16 8:00
 修改部分bug, token不用每次验证都重新生成
+添加数据库表，新增对应的实体类
+
+2019/8/16 10:44
+完成简单的商品列表页的展示

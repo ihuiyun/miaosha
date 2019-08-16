@@ -5,7 +5,17 @@ import java.util.Date;
 public class MiaoshaGoods {
 	private Long id;
 	private Long goodsId;
+	private Double miaoshaPrice;
 	private Integer stockCount;
+
+	public Double getMiaoshaPrice() {
+		return miaoshaPrice;
+	}
+
+	public void setMiaoshaPrice(Double miaoshaPrice) {
+		this.miaoshaPrice = miaoshaPrice;
+	}
+
 	private Date startDate;
 	private Date endDate;
 	public Long getId() {
