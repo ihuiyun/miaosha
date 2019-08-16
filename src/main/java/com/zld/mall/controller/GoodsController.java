@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * 描述：控制器
+ * 描述：商品相关请求处理控制器
  *
  * @author lida
  * @time 2019/8/13 19:51

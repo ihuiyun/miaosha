@@ -26,7 +26,8 @@ public class CodeMsg {
     //订单模块 5004XX
 
     //秒杀模块 5005XX
-
+    public static CodeMsg MIAO_SHA_ERROR = new CodeMsg(500500, "库存不足，秒杀失败");
+    public static CodeMsg REPEATE_MIAOSHA = new CodeMsg(500501, "操作失败，重复秒杀");
 
     private CodeMsg(int code, String msg) {
         this.code = code;
