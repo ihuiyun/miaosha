@@ -1,4 +1,4 @@
-package com.imooc.miaosha.domain;
+package com.zld.mall.domain;
 
 import java.util.Date;
 
