@@ -54,7 +54,7 @@ public class MiaoshaUserService {
         MiaoshaUser user = redisService.get(MiaoShaUserKey.token, token, MiaoshaUser.class);
         //延长登录的有效期
         if(user != null)
-            addCookie(response, user);
+            addCookie(response, token, user);
         return user;
     }
 
@@ -82,13 +82,13 @@ public class MiaoshaUserService {
         if (!calcPass.equals(dbPass)){
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }
-        //生成cookie
-        addCookie(response, user);
+        //登陆的时候生成cookie
+        String token = UUIDUtil.uuid();
+        addCookie(response, token, user);
         return true;
     }
 
-    private void addCookie(HttpServletResponse response, MiaoshaUser user){
-        String token = UUIDUtil.uuid();
+    private void addCookie(HttpServletResponse response, String token, MiaoshaUser user){
         //将token和对应的用户信息放入redis缓存
         redisService.set(MiaoShaUserKey.token, token, user);
         Cookie cookie = new Cookie(COOKIE_NAME_TOKEN, token);

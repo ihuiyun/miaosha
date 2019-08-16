@@ -1,4 +1,5 @@
 #### 秒杀系统
+teacher: joshua
 作者邮箱：ihuiyun@126.com
 有任何建议请联系
 一个商品秒杀的后台加前端代码，来自某课网
@@ -22,3 +23,6 @@
 2019/8/15 17:34
 完善分布式的session，将LoginController的参数处理代码提取优化
 将GoodsController中的对cookie的处理放到一个另外的处理类
+
+2019/8/16
+修改部分bug, token不用每次验证都重新生成
